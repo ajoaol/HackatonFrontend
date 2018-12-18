@@ -1,0 +1,146 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url('https://media.giphy.com/media/8VDlg2hpzqZHy/giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    /* in order to occupy the whole screen */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* Topbar */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #232121;
+}
+
+/* Dropdown btn menu */
+
+.dropbtn {
+    background-color: #2D2B55;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    width: 295px;
+    height: 50px;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #EFD347;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2D2B55;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #EFD347;
+}
+
+.show {
+    display: block;
+}
+
+.btnDropDown {
+    position: absolute;
+    right: 30px;
+}
+
+/* logo */
+
+.logo {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    width: 150px;
+    height: 50px;
+}
+
+/* buttons */
+
+.buttonplay {
+    position: absolute;
+    border-radius: 100%;
+    top: 590px;
+    left: 900px;
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    background-color: Transparent;
+    border: black 3px solid;
+}
+
+.buttonplay:hover {
+    background-image: url("https://media.giphy.com/media/3o6UBedJJfaxXHvZyU/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    color: white;
+}
+
+.buttoninst {
+    position: absolute;
+    border-radius: 100%;
+    top: 220px;
+    left: 1490px;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+.buttoninst:hover {
+    background-image: url("https://media.giphy.com/media/UN4YERXRZoAYU/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    color: white;
+}
+
+.buttonabout {
+    position: absolute;
+    border-radius: 100%;
+    top: 100px;
+    left: 150px;
+    width: 120px;
+    height: 120px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+}
+
+.buttonabout:hover {
+    background-image: url("https://media.giphy.com/media/UN4YERXRZoAYU/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    color: white;
+}

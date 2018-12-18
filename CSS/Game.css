@@ -1,0 +1,111 @@
+.question {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    text-align: justify;
+    width: 890px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+span {
+    position: absolute;
+    left: 100%;
+    width: 700px;
+    height: 200px;
+    background-color: transparent;
+    border: white 3px solid;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    top: -650px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0.5%;
+}
+
+.bto {
+    background-color: #232121;
+    border: none;
+    border: white 1px dashed;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.bto:hover {
+    background-image: url("https://media.giphy.com/media/TZf4ZyXb0lXXi/giphy.gif");
+}
+
+bto1 {
+    position: absolute;
+    top: 700px;
+    left: 400px;
+}
+
+bto2 {
+    position: absolute;
+    top: 700px;
+    left: 250px;
+}
+
+bto3 {
+    position: absolute;
+    top: 700px;
+    left: 300px;
+}
+
+bto4 {
+    position: absolute;
+    top: 700px;
+    left: 350px;
+}
+
+body {
+    position: absolute;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url("https://media.giphy.com/media/3oEdv1GbekAakxXO8g/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* in order to occupy the whole screen */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.btn {
+    position: absolute;
+    border-radius: 100%;
+    top: 470px;
+    left: 390px;
+    width: 130px;
+    height: 130px;
+    font-size: 20px;
+    background-color: Transparent;
+    border: white 3px solid;
+    color: white;
+}
+
+.btn:hover {
+    background-image: url("https://media.giphy.com/media/l41m4IRJqzgtFQ4O4/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    color: black;
+}

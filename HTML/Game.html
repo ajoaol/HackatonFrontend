@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../CSS/Game.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <title>Good luck!</title>
+
+    <script>
+
+        function goHome() {
+            window.location.replace("HomePage.html");
+        }
+
+
+        /* right/wrong answer */
+        function right() {
+            alert("Correct!");
+            window.location.reload();
+        }
+
+        function wrong() {
+            alert("wrong!")
+            window.location.reload();
+        }
+
+        window.onload = function () {
+            var id;
+            var ajaxQ = new XMLHttpRequest();
+            // start the AJAX request
+            ajaxQ.open('GET', 'http://192.168.1.252:8080/hackatonTekken/api/user/1/question', true);
+            ajaxQ.setRequestHeader('Content-type', 'application/json');
+            ajaxQ.send();
+
+            var i;
+            var questions;
+            // run this when the ajax request completes
+            ajaxQ.onreadystatechange = function () {
+                if (ajaxQ.readyState === 4 && ajaxQ.status === 200) {
+                    questions = JSON.parse(ajaxQ.response);
+                }
+
+
+                // Question
+                var pick = Math.floor(Math.random() * 15) + 1;
+                for (i = 0; i < questions.length; i++) {
+                    if (questions[i].id == pick) {
+                        console.log(questions[i].id);
+                        id = questions[i].id;
+                        var button = document.createElement('BUTTON');
+                        button.setAttribute('type', 'button');
+                        document.body.appendChild(button);
+                        requestAjax2();
+                        return button.innerHTML = '<span id="question" class="bto bto1" style="color:white;position:absolute;top:20px;left:50px;word-wrap: break-word;top: -650px;bottom: 0;left: 0;right: 0;margin: auto;text-align: center;">' + questions[i].description + '</span>'
+                    }
+                }
+            }
+
+
+
+
+            function requestAjax2() {
+                console.log('this is an i outside ajax req', id);
+                // Answer
+                var ajax = new XMLHttpRequest();
+                // start the AJAX request
+                var url = "http://192.168.1.252:8080/hackatonTekken/api/user/1/question/" + id;
+                console.log('conc url', url);
+                console.log('this is i:', id);
+                ajax.open('GET', url, true);
+                ajax.setRequestHeader('Content-type', 'application/json');
+                ajax.send();
+
+                var answers;
+                // run this when the ajax request completes
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState === 4 && ajax.status === 200) {
+                        answers = JSON.parse(ajax.response);
+                        console.log(answers.response);
+                    }
+
+                    console.log("popo" + answers.length);
+                    // Question
+                    var button = document.createElement('BUTTON');
+                    var button2 = document.createElement('BUTTON');
+                    var button3 = document.createElement('BUTTON');
+                    var button4 = document.createElement('BUTTON');
+                    button.setAttribute('type', 'button');
+                    button2.setAttribute('type', 'button');
+                    button3.setAttribute('type', 'button');
+                    button4.setAttribute('type', 'button');
+                    document.body.appendChild(button);
+                    document.body.appendChild(button2);
+                    document.body.appendChild(button3);
+                    document.body.appendChild(button4);
+                    button.innerHTML = '<button id="answer1" onclick="right()" class="bto bto1" style="color:white;position:absolute;top:400px;width:500px;height:70px;left:50px;word-wrap: break-word;top: -300px;bottom: 0;left: 0;right: 0;margin: auto;text-align: center;">' + answers[0].description + '</span>';
+                    button2.innerHTML = '<button id="answer2" onclick="wrong()" class="bto bto1" style="color:white;position:absolute;width:500px;height:70px;top:30px;left:70px;word-wrap: break-word;top: -150px;bottom: 0;left: 0;right: 0;margin: auto;text-align: center;">' + answers[1].description + '</span>';
+                    button3.innerHTML = '<button id="answer3" onclick="wrong()" class="bto bto1" style="color:white;position:absolute;top:600px;width:500px;height:70px;left:50px;word-wrap: break-word;top: 0px;bottom: 0;left: 0;right: 0;margin: auto;text-align: center;">' + answers[2].description + '</span>';
+                    button4.innerHTML = '<button id="answer4" onclick="wrong()" class="bto bto1" style="color:white;position:absolute;top:700px;width:500px;height:70px;left:50px;word-wrap: break-word;top: 150px;bottom: 0;left: 0;right: 0;margin: auto;text-align: center;">' + answers[3].description + '</span>'
+
+
+
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="questionsAnswers" class="question">
+        <br>
+        <br>
+        <button type="button" class="btn" onclick="goHome()">Take me home</button>
+
+    </div>
+</body>
+
+</html>

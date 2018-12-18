@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Our css -->
+    <link rel="stylesheet" type="text/css" href="../CSS/HomePage.css">
+    <title>Welcome to your future!</title>
+    <script>
+        var user = [{
+            "username": "codecadet"
+        }];
+
+        /* DROPDOWN MENU */
+        // toggle between hiding and showing the dropdown content
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        /* Sound */
+        function aboutUs() {
+            var mySound = new Audio("../resources/aboutus.mp3");
+            mySound.play();
+        }
+
+        function startGame() {
+            var mySound = new Audio("../resources/playbutton.mp3");
+            mySound.play();
+        }
+
+        function instructionsGame() {
+            var mySound = new Audio("../resources/instructions.mp3");
+            mySound.play();
+        }
+
+        /* Page redirection */
+        function redirectToGame() {
+            window.location.replace("Game.html");
+        }
+
+        function redirectToInst() {
+            window.location.replace("Instructions.html");
+        }
+
+        function redirectToAbout() {
+            window.location.replace("About.html");
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--topbar-->
+    <div id="topBar" class="topbar">
+        <img src="../resources/logoimg.png" alt="logoImage" class="logo" style="width: 250px" />
+
+        <div id="dropdownMenu" class="dropdown btnDropDown">
+            <button onclick="myFunction()" class="dropbtn">Touch my world with your fingertips</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#login">Login</a>
+                <a href="#register">Sign up</a>
+            </div>
+        </div>
+    </div>
+    <!--page.buttons-->
+    <button id="play" class="buttonplay" onmouseover="startGame()" onclick="redirectToGame()">PLAY</button>
+    <button id="instructions" class="buttoninst" onmouseover="instructionsGame()" onclick="redirectToInst()">How to play</button>
+    <button id="about" class="buttonabout" onmouseover="aboutUs()" onclick="redirectToAbout()">What we do</button>
+
+</body>
+
+</html>

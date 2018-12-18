@@ -1,0 +1,49 @@
+body {
+    position: absolute;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url("https://media.giphy.com/media/MiJms7ndEKh4k/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* in order to occupy the whole screen */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.text {
+    color: white;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    text-align: justify;
+    width: 1100px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    border-radius: 100%;
+    top: 570px;
+    left: 500px;
+    width: 130px;
+    height: 130px;
+    font-size: 20px;
+    background-color: Transparent;
+    border: black 3px solid;
+}
+
+.btn:hover {
+    background-image: url("https://media.giphy.com/media/l41m4IRJqzgtFQ4O4/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left left;
+    color: black;
+}
